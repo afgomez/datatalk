@@ -1,4 +1,5 @@
 source 'http://rubygems.org'
+source "http://gemcutter.org"
 
 gem 'rails', '3.0.7'
 
@@ -10,8 +11,13 @@ gem "jquery-rails"
 gem "devise"
 
 # gems for refinery
-
 gem 'refinerycms'
+
+group :test, :development do
+  gem "rspec-rails", "~> 2.4"
+  gem "machinist"
+  gem "faker"
+end
 
 # Use unicorn as the web server
 # gem 'unicorn'
