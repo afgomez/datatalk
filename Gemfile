@@ -1,4 +1,5 @@
 source 'http://rubygems.org'
+source "http://gemcutter.org"
 
 gem 'rails', '3.0.7'
 
@@ -11,6 +12,8 @@ gem "devise"
 
 group :test, :development do
   gem "rspec-rails", "~> 2.4"
+  gem "machinist"
+  gem "faker"
 end
 
 # Use unicorn as the web server
