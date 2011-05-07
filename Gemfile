@@ -12,6 +12,7 @@ gem "devise"
 # gems for refinery
 
 gem 'refinerycms'
+gem 'refinerycms-memberships', '1.0', :path => 'vendor/engines'
 
 # Use unicorn as the web server
 # gem 'unicorn'
