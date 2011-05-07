@@ -9,6 +9,10 @@ gem 'mysql2', '~> 0.2.0'
 gem "jquery-rails"
 gem "devise"
 
+group :test, :development do
+  gem "rspec-rails", "~> 2.4"
+end
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
