@@ -6,7 +6,7 @@ class CreateDatasets < ActiveRecord::Migration
       t.string :origin
       t.text :description
       t.string :data_file, :null => false
-      t.belongs_to :users
+      t.belongs_to :user
       
       t.timestamps
     end

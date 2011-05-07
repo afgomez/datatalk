@@ -5,8 +5,8 @@ class CreateAnalyses < ActiveRecord::Migration
       t.string :title
       t.string :excerpt
       t.text :body
-      t.belongs_to :analyses
-      t.belongs_to :users
+      t.belongs_to :analysis
+      t.belongs_to :user
 
       t.timestamps
     end
