@@ -9,8 +9,10 @@ describe Dataset do
   end
 
   it 'should save if user, name, origin and data_file set' do
-    dataset = Dataset.create!(:name => 'Foo Bar', :origin => 'Bar Foo', :data_file => @file, :user => User.make)
+    user = User.make
+    dataset = Dataset.create!(:name => 'Foo Bar', :origin => 'Bar Foo', :data_file => @file, :user => user)
     dataset.reload
+    dataset.user.should == user
     dataset.name.should == 'Foo Bar'
     dataset.origin.should == 'Bar Foo'
     File.basename(dataset.data_file.path).should == File.basename(@file.path)
