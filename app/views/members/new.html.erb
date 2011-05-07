@@ -1,0 +1,40 @@
+<div id="left_col">
+  <%= render :partial => "/shared/menu" -%>
+</div>
+<div id="right_col">
+  <%=raw @page[:right_body] if @page %>
+</div>
+<div id="page_content">
+  <%=raw @page[:middle_body] if @page %>
+  <div id="new_member_form">
+    <%= form_for @member, :as => :member, :url => members_path(:p => params[:p]) do |f| %>
+      <%= render :partial => "error_messages",
+        :locals => {
+        :object => @member,
+        :include_object_name => true
+      } %>      
+
+      <div id="member">
+        <%= render :partial => "form_account", :locals => {:f => f} %>
+        <fieldset>
+          <legend><%=t('members.shared.profile')%></legend>
+          <ol>
+            <li>
+              <%= f.label :name %>
+              <%= f.text_field :name %>&nbsp;
+            </li>
+            <li>
+              <%= f.label :surname_1 %>
+              <%= f.text_field :surname_1 %>&nbsp;
+            </li>
+            <li>
+              <%= f.label :surname_2 %>
+              <%= f.text_field :surname_2 %>&nbsp;
+            </li>
+          </ol>
+        </fieldset>
+        <%= f.submit "Registrarse" %>
+      </div>
+    <%end%>
+  </div>
+</div>
