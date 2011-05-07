@@ -10,6 +10,9 @@ gem 'mysql2', '~> 0.2.0'
 gem "jquery-rails"
 gem "devise"
 
+gem 'fastercsv'
+
+
 # gems for refinery
 gem 'refinerycms'
 
