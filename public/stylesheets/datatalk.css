@@ -59,3 +59,106 @@ input[type="text"]{margin:0;}
 .izq,.col-i{float:left;display:inline;}
 .drcha,.col-d{float:right;display:inline;}
 .table{display:table;height:1%;}
+
+
+a {
+  color:#06c;
+  text-decoration:none;
+}
+a:hover {
+  text-decoration:underline;
+}
+
+
+body {
+  color:#333;
+}
+
+
+
+
+/* Common
+--------------------------------------------------------------------- */
+
+.t {
+  font-size:1.4em;
+  text-transform:uppercase;
+  color:#678;
+  margin:15px;
+}
+
+
+/* Botones */
+.btn {
+  display:inline-block;
+  background:#ccc;
+  line-height:24px;
+  padding:0 10px;
+  font-size:1.1em;
+  color:#666;
+  text-decoration:none;
+}
+
+.actions {
+  text-align:right;
+}
+.actions .btn {
+  margin-left:5px;
+}
+
+
+
+
+
+/* Datasets
+--------------------------------------------------------------------- */
+.dataset {
+  background:#ddd;
+  padding:15px;
+  margin:15px 0;
+}
+
+.dataset h1 {
+  font-size:1.6em;
+  color:;
+}
+
+.dataset p {
+  font-size:1.3em;
+  line-height:140%;
+  margin:1ex 0;
+}
+
+#dataset .dataset {
+  margin-bottom:30px;
+  background:none;
+}
+#dataset .dataset h1 {
+  font-size:2.4em;
+}
+
+
+/* Analisis
+--------------------------------------------------------------------- */
+
+.analysis {
+  background:#ddd;
+  padding:15px;
+  margin:15px 0;
+}
+.analysis h2 {
+  font-size:1.6em;
+}
+.analysis p.meta {
+  font-size:1.1em;
+  color:#999;
+}
+.analysis p.meta span {
+  margin:0;
+}
+.analysis p {
+  font-size:1.3em;
+  line-height:140%;
+  margin:1ex 0;
+}
+
