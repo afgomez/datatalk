@@ -24,3 +24,4 @@ Datatalk::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
 end
 
+Refinery.rescue_not_found = false
