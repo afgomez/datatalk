@@ -18,13 +18,4 @@ describe User do
     User.new(:email => 'foo@bar.com',:name => 'Foo', :password => 'foo_bar').save.should be_false
   end
 
-  it 'should return name if nick nill or blank' do
-    user = User.make(:nick => nil)
-    user.reload
-    user.nick.should == user.name
-    user = User.make(:nick => '')
-    user.reload
-    user.nick.should == user.name
-  end
-
 end
