@@ -20,4 +20,18 @@ describe Analysis do
     Analysis.new(:body => 'Bar foo', :title => 'Foo bar', :user => User.make).save.should be_false
   end
 
+  it "should tell if it's a reply or nor" do
+    analysis = Analysis.make
+    analysis.reply?.should be_false
+    reply = Analysis.make
+    analysis.replies << reply
+    analysis.save
+    analysis.reload
+    reply.reload
+    analysis.replies.first.should == reply
+    debugger
+    analysis.reply?.should be_false
+    reply.reply?.should be_true
+  end
+
 end

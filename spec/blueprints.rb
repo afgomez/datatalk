@@ -5,6 +5,8 @@ Sham.name { Faker::Name.first_name }
 Sham.surname { Faker::Name.last_name }
 Sham.email { Faker::Internet.email }
 Sham.password { Faker::Base.bothify('??#??#??##') }
+Sham.title { Faker::Lorem.sentence(5) }
+Sham.body { Faker::Lorem.paragraphs(2) }
 
 User.blueprint do
   username { Sham.name }
@@ -24,4 +26,11 @@ Dataset.blueprint do
     file.close
     file
   end
+end
+
+Analysis.blueprint do
+  title
+  body
+  user
+  datasets { [Dataset.make] }
 end
