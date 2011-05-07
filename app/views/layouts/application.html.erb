@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Datatalk</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+  <link rel="stylesheet" type="text/css" href="datatalk.css" />
+</head>
+<body>
+
+<header>
+	<img src="rails.png" alt="Imagen de cabecera" />
+	<ul class="lista_cabecera">
+  		<li>Iniciar Sesión | </li>
+  		<li>Registro</li>  		
+  		<li>Panel de Control |</li>
+  		<li>Salir</li>
+	</ul>
+	<input type="text" name="fname" />
+	<nav class=="cabecera_navegacion">
+		<a href="hombe.html">Home</a>
+		<a href="analisis.html">Análisis</a>
+		<a href="datasets.html">Datasets</a>
+		<a href="about.html">¿Qué es esto?</a>
+		<a href="http://www.abredatos.es">www.abredatos.es</a>
+		<a href="http://www.twitter.com/abredatos">Twitter de Abredatos</a>
+	</nav>
+<header>
+
+<%= yield %>
+
+<footer>
+	<p class="pie">Datatalk - Abredatos</p>
+</footer>
+
+</body>
+</html>
