@@ -18,6 +18,7 @@ group :test, :development do
   gem "rspec-rails", "~> 2.4"
   gem "machinist"
   gem "faker"
+  gem "ruby-debug"
 end
 
 # Use unicorn as the web server
