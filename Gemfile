@@ -8,6 +8,10 @@ gem 'rails', '3.0.7'
 gem 'mysql2', '~> 0.2.0'
 gem "jquery-rails"
 
+# gems for refinery
+
+gem 'refinerycms'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
