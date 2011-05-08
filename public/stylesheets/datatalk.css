@@ -135,6 +135,11 @@ body {
   font-size:1.2em;
   width:250px;
 }
+.field textarea.larger {
+  width:650px;
+  height:250px;
+}
+
 .remember_me label {
   line-height:normal;
 }
@@ -147,6 +152,12 @@ body {
 .form-actions {
   padding-left:135px;
   font-size:1.2em;
+}
+
+#new_dataset {
+  background:#f0f0f0;
+  padding:20px;
+  margin:40px auto;
 }
 
 
