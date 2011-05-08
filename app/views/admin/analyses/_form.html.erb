@@ -34,13 +34,13 @@
     </div>
   
   <div class='field'>
-    <%= f.label :analysis_id -%>
-    <%= f.text_field :analysis_id -%>
+    <%= f.label :analysis_id, "Analisis al que se responde" -%>
+    <%= f.select :analysis_id, options_for_select(Analysis.all(:select => "id, title").map{|a|[a.title, a.id]}) -%>
   </div>
   
   <div class='field'>
     <%= f.label :user_id -%>
-    <%= f.text_field :user_id -%>
+    <%= f.select :user_id, options_for_select(User.all(:select => "id, username").map{|a|[a.username, a.id]}) -%>
   </div>
   
   <%= render :partial => "/shared/admin/form_actions",
