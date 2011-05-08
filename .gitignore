@@ -4,3 +4,9 @@ db/*.sqlite3
 log/*.log
 tmp/
 config/database.yml
+.rake_tasks~
+db/schema.rb
+Gemfile.lock
+public/datasets
+.#*
+\#*#
