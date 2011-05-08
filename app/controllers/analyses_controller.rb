@@ -12,12 +12,14 @@ class AnalysesController < ApplicationController
 
   def new
     @analysis = Analysis.new
-    @analysis.parent = Analysis.find(params[:reply])
+    @analysis.parent = Analysis.find(params[:reply]) unless params[:reply].nil?
   end
   
   def create
     @analysis = Analysis.new params[:analysis]
     @analysis.user_id = current_user.id
+    @visualization = Visualization.new params[:visualization]
+    @analysis.visualization = @visualization
     if @analysis.save
       flash[:notice] = "Has creado la respuesta correctamente"
       redirect_to analysis_path(:id => @analysis)
