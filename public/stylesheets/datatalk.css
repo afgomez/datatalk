@@ -121,6 +121,12 @@ img.miniatura_grafica {
   height:15%;  
 }
 
+img.avatar{
+  width:30px;
+  height:30px;
+
+}
+
 
 /* Botones */
 .btn {
