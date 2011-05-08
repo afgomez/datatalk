@@ -12,6 +12,9 @@ gem "devise"
 gem "carrierwave"
 gem "kaminari"
 
+gem 'fastercsv'
+
+
 # gems for refinery
 gem 'refinerycms'
 gem 'refinerycms-memberships', '1.0', :path => 'vendor/engines'
