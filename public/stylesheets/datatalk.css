@@ -116,6 +116,12 @@ img.img_cabecera{
 }
 
 
+img.miniatura_grafica {
+  width:15%;
+  height:15%;  
+}
+
+
 /* Botones */
 .btn {
   display:inline-block;
