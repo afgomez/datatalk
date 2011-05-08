@@ -1,4 +1,4 @@
-class Highcharts
+class Highchart
   
   attr_accessor :transpose
   
@@ -9,7 +9,7 @@ class Highcharts
   }
   
   def initialize(opts, data)
-    @opts = Highcharts::DEFAULTS.reverse_merge(opts)
+    @opts = Highchart::DEFAULTS.merge(opts)
     @data = data
   end
   
