@@ -68,7 +68,7 @@ class MembersController < ApplicationController
     if @member.save
       MembershipMailer.application_confirmation_member(@member).deliver
       MembershipMailer.application_confirmation_admin(@member).deliver
-      
+      sign_in(:user, @member);
     else
       @page = Page.find_by_link_url('/members/new')
       @member.errors.delete(:username) # this is set to email
