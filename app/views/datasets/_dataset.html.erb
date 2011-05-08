@@ -1,0 +1,14 @@
+<div class="dataset">
+
+  <div class="meta">
+    <h1><%= link_to_unless_current dataset.name, dataset_path(dataset) %></h1>
+    <p><%= dataset.description %></p>
+    <p class="source">Fuente: <%= link_to dataset.origin, dataset.origin %></p>
+  </div>
+  
+  <div class="actions">
+    <%= link_to 'Descargar', dataset.data_file_url, :class => 'btn' %>
+    <a href="#" class="btn">Crear nuevo análisis</a>
+  </div>
+
+</div>
