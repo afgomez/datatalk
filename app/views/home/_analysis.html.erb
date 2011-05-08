@@ -1,7 +1,7 @@
 <article class="analysis clearfix">
   <h1><%= link_to_unless_current 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt', analysis_path(1234) %></h1>
 
-  <%= Visualization.first.chart %>
+  <%= Visualization.first.chart unless Visualization.first.nil? %>
 
   <div class="content">
     
