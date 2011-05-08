@@ -10,6 +10,7 @@ gem 'mysql2', '~> 0.2.0'
 gem "jquery-rails"
 gem "devise"
 gem "carrierwave"
+gem "kaminari"
 
 # gems for refinery
 gem 'refinerycms'
