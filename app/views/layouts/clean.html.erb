@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Datatalk</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults, 'highcharts' %>
+  <%= csrf_meta_tag %>
+</head>
+<body<%= body_id %> class="clean">
+
+
+
+<div class="wrapper">
+
+
+  <header class="c">
+    <h1 class="cabecera">Datatalk</h1>
+    <p class="tagline">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut</p>
+    <!-- <div class="header_tools">
+    <form class ="buscador" action="form_action.asp" method="get">
+    <input type="text" name="fname" />
+    </form>
+    </div> -->
+
+  </header>
+
+  
+  <% [:notice, :alert].each do |k| %>
+    <% unless flash[k].blank? %>
+      <div class="flash <%= k %>"><%= flash[k] %></div>
+    <% end %>
+  <% end %>
+  
+  <div id="container">
+    <%= yield %>
+  </div>  
+
+</div><!-- wrapper -->
+</body>
+</html>
