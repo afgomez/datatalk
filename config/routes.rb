@@ -1,6 +1,6 @@
 Datatalk::Application.routes.draw do
 
-  resources :analysis
+  resources :analyses
   resources :datasets
   resources :analysis
   resources :visualizations
