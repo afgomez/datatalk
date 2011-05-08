@@ -1,4 +1,4 @@
-<%= form_for [:admin, @dataset] do |f| -%>
+<%= form_for [:admin, @dataset], :html => {:enctype => "multipart/form-data"} do |f| -%>
   <%= render :partial => "/shared/admin/error_messages", :locals => {
           :object => @dataset,
           :include_object_name => true
@@ -34,13 +34,14 @@
     </div>
   
   <div class='field'>
+    <%= link_to("Descargar CSV", @dataset.data_file.url) unless @dataset.data_file.blank? %>
     <%= f.label :data_file -%>
-    <%= f.text_field :data_file -%>
+    <%= f.file_field :data_file -%>
   </div>
   
   <div class='field'>
     <%= f.label :user_id -%>
-    <%= f.text_field :user_id -%>
+    <%= f.select :user_id, options_for_select(User.all(:select => "id, username").map{|u|[u.username, u.id]}) -%>
   </div>
   
   <%= render :partial => "/shared/admin/form_actions",
