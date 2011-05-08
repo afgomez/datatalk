@@ -32,4 +32,11 @@ Analysis.blueprint do
   title
   body
   user
+  visualizations { [Visualization.make] }
+end
+
+Visualization.blueprint do
+  legend { Sham.title }
+  body
+  dataset
 end
