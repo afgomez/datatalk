@@ -17,4 +17,13 @@ class Analysis < ActiveRecord::Base
     !parent.nil?
   end
 
+  def visualization
+    visualizations.first
+  end
+
+  def visualization= v
+    visualizations.clear
+    visualizations << v
+  end
+
 end
