@@ -14,6 +14,7 @@ gem "carrierwave"
 # gems for refinery
 gem 'refinerycms'
 gem 'refinerycms-memberships', '1.0', :path => 'vendor/engines'
+gem 'refinerycms-datasets', '1.0', :path => 'vendor/engines'
 
 group :test, :development do
   gem "rspec-rails", "~> 2.4"
