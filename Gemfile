@@ -13,6 +13,7 @@ gem "carrierwave"
 
 gem 'fastercsv'
 
+gem "kaminari"
 
 # gems for refinery
 gem 'refinerycms'

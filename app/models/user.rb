@@ -70,4 +70,8 @@ class User < ActiveRecord::Base
     roles.any?{|r| r.title == title.to_s.camelize}
   end
 
+  def full_name
+    "#{first_name} #{surname_1}"
+  end
+
 end

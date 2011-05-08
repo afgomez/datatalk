@@ -2,10 +2,25 @@
 
 <h1 class="t">Análisis</h1>
 
-<%= render :partial => 'analysis' %>
+<div class="analysis">
+
+  <div class="meta">
+    <h1 class="t"><%= link_to_unless_current @analysis.title, analysi_path(:id => @analysis) %></h1>
+
+    <p class="meta"><%= l @analysis.created_at, :format => :short %> - <img class="avatar" src="/images/avatar.png" alt="Avatar del usuario"/> <a href="#"><%= @analysis.user.full_name %></a> - Fecha última modificación: <%= l @analysis.updated_at, :format => :short %></p>
+
+    <img src="/images/grafica.jpg" alt="gráfica de visualización"/>
+    
+    <p><%= @analysis.excerpt %></p>
+
+
+  <div class="actions">
+      <a href="#" class="btn">Añadir comentario</a>
+  </div>
+    
+  </div>  
+</div>
 
 <h1 class="t">Comentarios</h1>
 
-<% 5.times do %>
-  <%= render :partial => 'comment' %>
-<% end %>
+<%= render :partial => 'comment', :collection => @analysis.replies %>
