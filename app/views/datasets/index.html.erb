@@ -1,1 +1,7 @@
-<%= render @datasets %>
+<% unless @datasets.blank? %>
+  <%= render @datasets %>
+
+  <%= paginate @datasets %>
+<% else %>
+  <p>Lo sentimos. Actualmente no hay datos disponibles. Tal vez quiera <a href="TODO">publicar uno nuevo</a>.</p>
+<% end %>
