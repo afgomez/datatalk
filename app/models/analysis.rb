@@ -6,9 +6,12 @@ class Analysis < ActiveRecord::Base
   has_many :replies, :class_name => 'Analysis'
   has_many :visualizations
 
+  has_friendly_id :title, :use_slug => true
+
   # Validations
   validates_presence_of :title, :body, :user
   validates_presence_of :visualizations, :unless => :reply?
+
 
   def reply?
     !parent.nil?
