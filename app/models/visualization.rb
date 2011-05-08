@@ -1,6 +1,10 @@
 class Visualization < ActiveRecord::Base
 
-  # Validations
-  validates_presence_of :legend, :body
+  # Database relations
+  belongs_to :dataset
+  belongs_to :analysis
   
+  # Validations
+  validates_presence_of :legend, :body, :dataset
+
 end

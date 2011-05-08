@@ -4,10 +4,11 @@ class Analysis < ActiveRecord::Base
   belongs_to :parent, :class_name => 'Analysis', :foreign_key => 'analysis_id'
   belongs_to :user
   has_many :replies, :class_name => 'Analysis'
-  has_and_belongs_to_many :datasets
+  has_many :visualizations
 
   # Validations
-  validates_presence_of :title, :body, :user, :datasets
+  validates_presence_of :title, :body, :user
+  validates_presence_of :visualizations, :unless => :reply?
 
   def reply?
     !parent.nil?
