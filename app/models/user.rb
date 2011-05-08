@@ -2,8 +2,12 @@ require 'devise'
 
 class User < ActiveRecord::Base
 
+  # Database relations
   has_and_belongs_to_many :roles
   has_many :plugins, :class_name => "UserPlugin", :order => "position ASC", :dependent => :destroy
+  has_many :datasets
+  has_many :analyses
+  
   has_friendly_id :username, :use_slug => true
 
   # Include default devise modules. Others available are:

@@ -26,7 +26,14 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 
-  # Reset Sham before tests
-  config.before(:all)    { Sham.reset(:before_all)  }
-  config.before(:each)   { Sham.reset(:before_each) }
+  config.before(:all) do
+    # Reset Sham before tests
+    Sham.reset(:before_all)
+    # Preparamos el directorio para los ficheros de prueba:
+    FileUtils.mkdir_p('tmp/uploaded_files')
+    FileUtils.rm Dir.glob('tmp/uploaded_files/*')
+  end
+  
+  config.before(:each) { Sham.reset(:before_each) }
+  
 end
