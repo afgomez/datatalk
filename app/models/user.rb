@@ -1,8 +1,13 @@
 require 'devise'
 
 class User < ActiveRecord::Base
+
+  # Database relations
   has_and_belongs_to_many :roles
   has_many :plugins, :class_name => "UserPlugin", :order => "position ASC", :dependent => :destroy
+  has_many :datasets
+  has_many :analyses
+  
   has_friendly_id :username, :use_slug => true
 
   # Include default devise modules. Others available are:
@@ -13,11 +18,14 @@ class User < ActiveRecord::Base
   # :login is a virtual attribute for authenticating by either username or email
   # This is in addition to a real persisted field like 'username'
   attr_accessor :login
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :plugins, :login
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :plugins, :login, :name, :surname_1, :surname_2
 
+  # Validations
   validates :username, :presence => true, :uniqueness => true
-
+  validates_presence_of :name, :surname_1
+    
   class << self
+    
     # Configure authentication_keys here instead of devise.rb initialzer so we don't overwrite standard devise models
     def authentication_keys
       [:login]

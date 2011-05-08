@@ -3,7 +3,6 @@ Datatalk::Application.routes.draw do
   resources :datasets
   resources :visualizations
   
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
