@@ -1,17 +1,26 @@
-<div class="analysis">
-
-  <div class="meta">
-  	<h1 class="t"><%= link_to_unless_current analysis.title, analysis_path(:id => analysis) %></h1>
-
-  	<p class="meta"><%= l analysis.created_at, :format => :short %> - <img class="avatar" src="/images/avatar.png" alt="Avatar del usuario"/> <a href="#"><%= analysis.user.full_name %></a> - Fecha última modificación: <%= l analysis.updated_at, :format => :short %></p>
-
-  	<img src="/images/grafica.jpg" alt="gráfica de visualización"/>
-    
-    <p><%= analysis.excerpt %></p>
-
-  <div class="actions">
-      <%= link_to "Añadir comentario", new_analysis_url(:reply => analysis),  :class => "btn" %>
+<article class="analysis clearfix">
+  <h1><%= link_to_unless_current analysis.title, analysis_path(analysis) %></h1>
+  
+  <% analysis.visualizations.each do |visualization| %>
+    <%= visualization.chart %>
+  <% end %>
+  
+  <div class="content">
+    <%=raw analysis.body %>
   </div>
     
-  </div>  
-</div>
+  <aside class="meta">
+    <%= gravatar_for analysis.user %>
+    <p class="author"><img src="/images/user.png" alt="Icono de usuario"/> <%= analysis.user.full_name %></p>
+    <p class="date"><img src="/images/date.png" alt="Icono de fecha"/> <%= l analysis.created_at, :format => :short %></p>
+    <p class="facebook"><a href="http://www.facebook.com/share.php?u=<%= analysis_url(analysis) %>"><img src="/images/facebook.png" alt="Compartir en facebook"/> Facebook</a></p>
+    <p class="twitter"><a href="http://twitter.com/home?status=<%= analysis_url(analysis) %>"><img src="/images/twitter.png" alt="Compartir en twitter"/> Twitter</a></p>
+    <p class="delicious"><a href="http://del.icio.us/post?url=<%= analysis_url(analysis) %>"><img src="/images/delicious.png" alt="Guardar en del.icio.us"/> Del.icio.us</a></p>
+    
+    <p><%= link_to "#{image_tag('comments_add.png')} Añadir comentario".html_safe, new_analysis_url(:reply => analysis) %></p>
+    <p><%= link_to 'Editar análisis', edit_analysis_path(@analysis) if @analysis.user.id == current_user.id %></p>
+  </aside><!-- meta -->
+  
+  
+  
+</article>

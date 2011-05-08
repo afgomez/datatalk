@@ -1,3 +1,5 @@
-<% 5.times do %>
-  <%= render :partial => 'analysis' %>
+<% if @analyses.present? %>
+  <%= render @analyses %>
+<% else %>
+  <div class="flash alert">No hay ningún análisis</div>
 <% end %>

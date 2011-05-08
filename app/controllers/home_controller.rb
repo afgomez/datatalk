@@ -1,5 +1,8 @@
 class HomeController < ApplicationController
 
-	def index
-	end
+  def index
+    @analyses = Analysis.page(params[:page])
+  end
+  
+  
 end
