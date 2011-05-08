@@ -2,7 +2,7 @@ class Dataset < ActiveRecord::Base
 
   # Database relations
   belongs_to :user
-  has_and_belongs_to_many :analyses
+  has_many :visualizations
   
   # Validations
   validates_presence_of :name, :origin, :data_file, :user

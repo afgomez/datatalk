@@ -32,5 +32,4 @@ Analysis.blueprint do
   title
   body
   user
-  datasets { [Dataset.make] }
 end
