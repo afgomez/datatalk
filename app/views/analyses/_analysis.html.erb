@@ -1,7 +1,7 @@
 <div class="analysis">
 
   <div class="meta">
-  	<h1 class="t"><%= link_to_unless_current analysis.title, analysi_path(:id => analysis) %></h1>
+  	<h1 class="t"><%= link_to_unless_current analysis.title, analysis_path(:id => analysis) %></h1>
 
   	<p class="meta"><%= l analysis.created_at, :format => :short %> - <img class="avatar" src="/images/avatar.png" alt="Avatar del usuario"/> <a href="#"><%= analysis.user.full_name %></a> - Fecha última modificación: <%= l analysis.updated_at, :format => :short %></p>
 
@@ -9,9 +9,9 @@
     
     <p><%= analysis.excerpt %></p>
 
-	<div class="actions">
-	    <a href="#" class="btn">Añadir comentario</a>
-	</div>
+  <div class="actions">
+      <%= link_to "Añadir comentario", new_analysis_url(:reply => analysis),  :class => "btn" %>
+  </div>
     
   </div>  
 </div>
