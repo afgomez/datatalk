@@ -49,6 +49,14 @@ Datatalk::Application.routes.draw do
   #     resources :products
   #   end
 
+  scope(:path => 'refinery', :as => 'admin', :module => 'admin') do
+    resources :datasets, :except => :show do
+      collection do
+        post :update_positions
+      end
+    end
+  end
+  
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   root :to => "home#index"
