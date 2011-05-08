@@ -333,6 +333,34 @@ img.avatar{
 }
 
 
+/* Páginas
+--------------------------------------------------------------------- */
+#body_content {
+  margin:30px 0 60px;
+}
+#body_content #body_content_title {
+  font-size:2.4em;
+}
+#body_content p {
+  font-size:1.3em;
+  margin:1em 0;
+  line-height:140%;
+}
+#body_content ul {
+  font-size:1.3em;
+  margin:1em 0 1em 2em;
+  list-style:disc;
+}
+#body_content ul {
+  font-size:1em;
+  margin:0 0 2em;
+  list-style:circle;
+}
+#body_content ol {
+  font-size:1.3em;
+  margin:1em 0 1em 2em;
+  list-style:decimal;
+}
 
 
 
