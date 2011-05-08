@@ -287,7 +287,19 @@ img.avatar{
   background:#eee;
   position:relative;
   
+  -ms-filter:"alpha(opacity=30)";
+  filter:alpha(opacity=30);
+  opacity: 0.3;
+  -webkit-transition: opacity 0.4s;
+  -moz-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
 }
+
+.analysis:hover aside {
+  opacity:1;
+}
+
+
 .analysis aside p {
   margin:0 0 7px;
   padding-bottom:7px;
@@ -296,7 +308,7 @@ img.avatar{
   line-height:normal;
   color:#999;
 }
-.analysis aside img{
+.analysis aside img {
   vertical-align:middle;  
 }
 .analysis aside a{
