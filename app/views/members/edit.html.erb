@@ -1,0 +1,32 @@
+<div id="member">
+ <%= form_for @member, :as => :member, :url => member_path(@member) do |f| %>
+      <%= render :partial => "error_messages",
+        :locals => {
+        :object => @member,
+        :include_object_name => true
+      } %>      
+
+      <div id="member">
+        <%= render :partial => "form_account", :locals => {:f => f} %>
+        <fieldset>
+          <legend><%=t('members.shared.profile')%></legend>
+          <ol>
+            <li>
+              <%= f.label :name %>
+              <%= f.text_field :name %>&nbsp;
+            </li>
+            <li>
+              <%= f.label :surname_1 %>
+              <%= f.text_field :surname_1 %>&nbsp;
+            </li>
+            <li>
+              <%= f.label :surname_2 %>
+              <%= f.text_field :surname_2 %>&nbsp;
+            </li>
+          </ol>
+        </fieldset>
+        <%= f.submit "Registrarse" %>
+      </div>
+    <%end%>
+</div>
+  
