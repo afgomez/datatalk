@@ -16,12 +16,12 @@
   
   <div class='field'>
     <%= f.label :dataset_id -%>
-    <%= f.text_field :dataset_id -%>
+    <%= f.select :dataset_id, options_for_select(Dataset.all.map{|d| [d.name,d.id]}) -%>
   </div>
   
   <div class='field'>
     <%= f.label :analysis_id -%>
-    <%= f.text_field :analysis_id -%>
+    <%= f.select :analysis_id, options_for_select(Analysis.all.map{|d| [d.name,d.id]}) -%>
   </div>
   
   <div class='field'>
