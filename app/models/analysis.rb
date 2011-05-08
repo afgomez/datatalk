@@ -7,7 +7,7 @@ class Analysis < ActiveRecord::Base
   belongs_to :user
   has_many :replies, :class_name => 'Analysis'
   has_many :visualizations
-
+  has_many :datasets, :through => :visualizations
   has_friendly_id :title, :use_slug => true
 
   # Scopes
