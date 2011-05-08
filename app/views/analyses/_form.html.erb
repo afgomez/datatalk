@@ -1,6 +1,5 @@
 <% form_for @analysis do |f| %>
- 
- <%= error_messages_for @analysis %>
+ <%= render "shared/form_errors", :object => @analysis %>
   <div class='field'>
     <%= f.label :title -%>
     <%= f.text_field :title, :class => 'larger widest' -%>

@@ -1,0 +1,36 @@
+<div class='visualization'>
+  <%= fields_for :visualization do |f| -%>
+
+    <div class='field'>
+      <%= f.label :legend -%>
+      <%= f.text_field :legend, :class => 'larger widest' -%>
+    </div>
+
+    <div class='field'>
+      <%= f.label :body -%>
+      <%= f.text_field :body -%>
+    </div>
+
+    <div class='field'>
+      <%= f.label :dataset_id -%>
+      <%= f.select :dataset_id, options_for_select(Dataset.all.map{|d| [d.name,d.id]}) -%>
+    </div>
+
+    <div class='field'>
+      <%= f.label :transpose -%>
+      <%= f.check_box :transpose -%>
+    </div>
+
+    <div class='field'>
+      <%= f.label :width -%>
+      <%= f.text_field :width -%>
+    </div>
+
+    <div class='field'>
+      <%= f.label :height -%>
+      <%= f.text_field :height -%>
+    </div>
+
+  <% end -%>
+
+</div>

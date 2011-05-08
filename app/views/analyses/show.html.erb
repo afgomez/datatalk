@@ -15,6 +15,7 @@
 
 
   <div class="actions">
+    <%= link_to 'Editar análisis', edit_analysis_path(@analysis), :class => "btn" if @analysis.user.id == current_user.id %>
       <%= link_to "Añadir comentario", new_analysis_url(:reply => @analysis),  :class => "btn" %>
   </div>
     
