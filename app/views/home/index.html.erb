@@ -1,5 +1,7 @@
 <% if @analyses.present? %>
   <%= render @analyses %>
+  <%= paginate @analyses %>
+  
 <% else %>
   <div class="flash alert">No hay ningún análisis</div>
 <% end %>

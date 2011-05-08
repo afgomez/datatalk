@@ -129,7 +129,7 @@ body {
   float:right;
 }
 
-nav {
+nav.cabecera_navegacion {
   font:1.3em/32px Arial, Helvetica, sans-serif;
   background:#212121;
   color:#fff;
@@ -137,13 +137,13 @@ nav {
   padding-left:12px;
 
 }
-nav a {
+nav.cabecera_navegacion a {
   color:#fff;
   float:left;
   padding:0 15px;
   background:url(../images/nav-separator.png) no-repeat 0 center;
 }
-nav a:first-child {
+nav.cabecera_navegacion a:first-child {
   background:none;
 }
 img.img_cabecera{
@@ -334,4 +334,24 @@ img.avatar{
   line-height:140%;
   margin:1ex 0;
 }
+
+
+/* Pagination
+--------------------------------------------------------------------- */
+.pagination {
+  text-align:center;
+  font-size:1.2em;
+  margin:20px 0 40px;
+}
+.pagination a {
+  display:inline-block;
+  padding:3px 7px;
+  border:1px solid #079;
+}
+.pagination .current {
+  padding:3px 7px;
+  font-weight:bold;
+}
+
+
 
