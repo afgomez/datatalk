@@ -1,4 +1,6 @@
 <%= render @analysis %>
 
-<h1 class="t">Comentarios</h1>
-<%= render :partial => 'comment', :collection => @analysis.replies %>
+<% if @analysis.replies.present? %>
+  <h1 class="t">Comentarios</h1>
+  <%= render :partial => 'comment', :collection => @analysis.replies %>
+<% end %>

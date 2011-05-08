@@ -18,7 +18,10 @@
     <p class="delicious"><a href="http://del.icio.us/post?url=<%= analysis_url(analysis) %>"><img src="/images/delicious.png" alt="Guardar en del.icio.us"/> Del.icio.us</a></p>
     
     <p><%= link_to "#{image_tag('comments_add.png')} Añadir comentario".html_safe, new_analysis_url(:reply => analysis) %></p>
-    <p><%= link_to 'Editar análisis', edit_analysis_path(@analysis) if @analysis.user.id == current_user.id %></p>
+    
+    <% if user_signed_in? && (analysis.user.id == current_user.id) %>
+      <p><%= link_to 'Editar análisis', edit_analysis_path(analysis) %></p>
+    <% end %>
   </aside><!-- meta -->
   
   
