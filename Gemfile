@@ -48,3 +48,5 @@ end
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+gem 'refinerycms-analyses', '1.0', :path => 'vendor/engines'
