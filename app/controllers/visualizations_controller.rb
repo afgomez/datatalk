@@ -1,4 +1,4 @@
-class VisualizationsControllers < ApplicationController
+class VisualizationsController < ApplicationController
   
   def index
     
