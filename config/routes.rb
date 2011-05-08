@@ -49,9 +49,12 @@ Datatalk::Application.routes.draw do
         post :update_positions
       end
     end
-  end
+    resources :visualizations, :except => :show do
+      collection do
+        post :update_positions
+      end
+    end
 
-  scope(:path => 'refinery', :as => 'admin', :module => 'admin') do
     resources :datasets, :except => :show do
       collection do
         post :update_positions

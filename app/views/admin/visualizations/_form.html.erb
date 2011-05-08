@@ -1,0 +1,49 @@
+<%= form_for [:admin, @visualization] do |f| -%>
+  <%= render :partial => "/shared/admin/error_messages", :locals => {
+          :object => @visualization,
+          :include_object_name => true
+        } %>
+  
+  <div class='field'>
+    <%= f.label :legend -%>
+    <%= f.text_field :legend, :class => 'larger widest' -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :body -%>
+    <%= f.text_field :body -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :dataset_id -%>
+    <%= f.text_field :dataset_id -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :analysis_id -%>
+    <%= f.text_field :analysis_id -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :transpose -%>
+    <%= f.check_box :transpose -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :width -%>
+    <%= f.text_field :width -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :height -%>
+    <%= f.text_field :height -%>
+  </div>
+  
+  <%= render :partial => "/shared/admin/form_actions",
+              :locals => {
+                :f => f,
+                :continue_editing => false,
+                :delete_title => t('delete', :scope => 'admin.visualizations.visualization'),
+                :delete_confirmation => t('message', :scope => 'shared.admin.delete', :title => @visualization.legend)
+              } %>
+<% end -%>
