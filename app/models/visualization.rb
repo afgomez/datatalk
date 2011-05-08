@@ -5,7 +5,7 @@ class Visualization < ActiveRecord::Base
   belongs_to :analysis
   
   # Validations
-  validates_presence_of :legend, :body, :dataset
+  validates_presence_of :legend, :dataset
   
   # Delegations
   delegate :csv, :to => :dataset, :allow_nil => true
@@ -30,9 +30,12 @@ class Visualization < ActiveRecord::Base
     
     chart_code = "<div id=\"#{opts[:renderTo]}\" style=\"height:#{height}px;width:#{width}px;\"></div>"
     chart_code << hc.render
-    
-    update_attributes(:body => chart_code)
 
+    if new_record?
+      self.body = chart_code
+    else
+      update_attributes(:body => chart_code)
+    end
     return body.html_safe
   end
   

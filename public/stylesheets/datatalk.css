@@ -87,6 +87,46 @@ body {
   margin:15px;
 }
 
+.c
+{clear:right;
+background:#DDDDDD;
+overflow:hidden;}
+
+.header_tools{
+  float:right;
+}
+
+nav{
+  background:#DDD;
+  float:right;
+}
+
+img.img_cabecera{
+  background:#DDDDDD;
+  float:left;
+}
+
+
+.lista_cabecera li{
+  float:left;
+}
+
+.f{
+  background:#DDD;
+}
+
+
+img.miniatura_grafica {
+  width:15%;
+  height:15%;  
+}
+
+img.avatar{
+  width:30px;
+  height:30px;
+
+}
+
 
 /* Botones */
 .btn {
