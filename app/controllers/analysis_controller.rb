@@ -1,4 +1,8 @@
-class AnalysisControllers < ApplicationController
+class AnalysisController < ApplicationController
+  
+  def index
+    
+  end
     
   def show
     
