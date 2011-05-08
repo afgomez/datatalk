@@ -107,6 +107,107 @@ body {
   padding:0 15px 0 28px;
 }
 
+.clean #container {
+  margin-top:40px;
+}
+
+
+/* Formularios
+--------------------------------------------------------------------- */
+.field {
+  margin-bottom:15px;
+}
+.field label {
+  font-size:1.3em;
+  font-weight:bold;
+  float:left;
+  width:120px;
+  padding-right:15px;
+  color:#666;
+  line-height:26px;
+}
+.field .larger {
+  border:1px solid #bbb;
+  -webkit-border-radius: 2px;
+     -moz-border-radius: 2px;
+          border-radius: 2px;
+  padding:5px;
+  font-size:1.2em;
+  width:250px;
+}
+.remember_me label {
+  line-height:normal;
+}
+
+.forgot_password {
+  padding-left:135px;
+  font-size:1.2em;
+}
+
+.form-actions {
+  padding-left:135px;
+  font-size:1.2em;
+}
+
+
+#user_new {
+  width:450px;
+  margin:0 auto;
+  padding:20px;
+  background:#f0f0f0;
+}
+
+
+/* Miembros */
+#member_new {
+  width:450px;
+  margin:0 auto;
+  padding:20px;
+  background:#f0f0f0;
+}
+
+.field {
+  margin-bottom:15px;
+}
+#member_new legend {
+  font-size:1.4em;
+  text-transform:uppercase;
+  color:#678;
+  font-weight:bold;
+}
+#member_new fieldset {
+  margin-bottom:20px;
+  padding-top:10px;
+}
+#member_new li {
+  overflow:hidden;
+  height:1%;
+  margin-bottom:15px;
+}
+#member_new li label {
+  font-size:1.3em;
+  font-weight:bold;
+  float:left;
+  width:150px;
+  padding-right:15px;
+  color:#666;
+  line-height:26px;
+}
+#member_new li input {
+  border:1px solid #bbb;
+  -webkit-border-radius: 2px;
+     -moz-border-radius: 2px;
+          border-radius: 2px;
+  padding:5px;
+  font-size:1.2em;
+  width:250px;
+}
+
+#member_new #member_submit {
+  font-size:1.2em;
+}
+
+
 
 /* Common
 --------------------------------------------------------------------- */
@@ -124,7 +225,11 @@ body {
   text-indent:-999px;
   overflow:hidden;
 }
-
+.clean .c {
+  background-position:0 -82px;
+  height:66px;
+  margin-top:20px;
+}
 .header_tools{
   float:right;
 }
@@ -228,6 +333,34 @@ img.avatar{
 }
 
 
+/* Páginas
+--------------------------------------------------------------------- */
+#body_content {
+  margin:30px 0 60px;
+}
+#body_content #body_content_title {
+  font-size:2.4em;
+}
+#body_content p {
+  font-size:1.3em;
+  margin:1em 0;
+  line-height:140%;
+}
+#body_content ul {
+  font-size:1.3em;
+  margin:1em 0 1em 2em;
+  list-style:disc;
+}
+#body_content ul {
+  font-size:1em;
+  margin:0 0 2em;
+  list-style:circle;
+}
+#body_content ol {
+  font-size:1.3em;
+  margin:1em 0 1em 2em;
+  list-style:decimal;
+}
 
 
 
