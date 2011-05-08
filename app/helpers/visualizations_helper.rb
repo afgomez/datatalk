@@ -1,2 +1,2 @@
-module VisualizationssHelper
+module VisualizationsHelper
 end
