@@ -115,7 +115,7 @@ body {
   font-size:1.4em;
   text-transform:uppercase;
   color:#678;
-  margin:15px;
+  margin:15px 0;
 }
 
 .c {
@@ -272,6 +272,9 @@ img.avatar{
 .analysis h1 {
   font-size:2.4em;
   margin-bottom:15px;
+}
+.analysis h2 {
+  font-size:1.8em;
 }
 .analysis .content {
   float:left;
