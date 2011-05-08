@@ -1,11 +1,11 @@
 <div class='field'>
   <%= f.label :title -%>
-  <%= f.text_field :title, :class => 'larger widest' -%>
+  <%= f.text_field :title, :class => 'larger' -%>
 </div>
 
 <div class='field'>
   <%= f.label :excerpt -%>
-  <%= f.text_field :excerpt -%>
+  <%= f.text_field :excerpt, :class => 'larger excerpt' -%>
 </div>
 
 <div class='field'>
@@ -13,7 +13,7 @@
     <ul id='page_parts'>
       <% [:body].each_with_index do |part, part_index| %>
         <li class='ui-state-default<%= ' ui-state-active' if part_index == 0 %>'>
-          <%= link_to part.to_s.titleize, "##{part}" %>
+          <%= f.label part.to_s.titleize %>
         </li>
       <% end %>
     </ul>
@@ -21,7 +21,7 @@
     <div id='page_part_editors'>
       <% [:body].each do |part| %>
         <div class='page_part' id='<%= part %>'>
-          <%= f.text_area part, :rows => 20, :class => 'wymeditor widest' -%>
+          <%= f.text_area part, :rows => 20, :class => 'wymeditor larger widest' -%>
         </div>
       <% end %>
     </div>

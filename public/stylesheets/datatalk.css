@@ -135,6 +135,9 @@ body {
   font-size:1.2em;
   width:250px;
 }
+.field .excerpt {
+  width:650px;
+}
 .field textarea.larger {
   width:650px;
   height:250px;
@@ -154,7 +157,7 @@ body {
   font-size:1.2em;
 }
 
-#new_dataset {
+#new_dataset, #new_analysis {
   background:#f0f0f0;
   padding:20px;
   margin:40px auto;
