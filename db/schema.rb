@@ -194,9 +194,6 @@ ActiveRecord::Schema.define(:version => 20110508110458) do
     t.string   "remember_token"
     t.string   "reset_password_token"
     t.datetime "remember_created_at"
-    t.string   "name"
-    t.string   "surname_1"
-    t.string   "surname_2"
     t.datetime "member_until"
     t.string   "membership_level"
   end

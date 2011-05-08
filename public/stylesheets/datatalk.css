@@ -175,11 +175,27 @@ img.img_cabecera{
 }
 
 
-
-.f{
-  background:#DDD;
+.lista_pie{
+  background:#212121;
+  color:#fff;
+  padding:5px 0;
+  overflow:hidden;
 }
-
+.lista_pie ul{
+  float:right;
+}
+.lista_pie li{
+  float:left;
+  padding:0 10px;
+  border-left:1px solid #fff;
+  line-height:31px;
+}
+.lista_pie li:first-child{
+  border:none;  
+}
+.lista_pie a{
+  color:#fff;
+}
 
 img.miniatura_grafica {
   width:15%;
@@ -274,6 +290,12 @@ img.avatar{
   font-size:1.1em;
   line-height:normal;
   color:#999;
+}
+.analysis aside img{
+  vertical-align:middle;  
+}
+.analysis aside a{
+  text-decoration:none;
 }
 .analysis aside .avatar {
   position:absolute;
