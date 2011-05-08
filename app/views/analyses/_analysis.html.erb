@@ -13,6 +13,9 @@
     <%= gravatar_for analysis.user %>
     <p class="author"><img src="/images/user.png" alt="Icono de usuario"/> <%= analysis.user.full_name %></p>
     <p class="date"><img src="/images/date.png" alt="Icono de fecha"/> <%= l analysis.created_at, :format => :short %></p>
+    <% analysis.datasets.each do |d| %>
+    <p><%= link_to d.name, dataset_path(d) %></p>
+    <% end %>
     <p class="facebook"><a href="http://www.facebook.com/share.php?u=<%= analysis_url(analysis) %>"><img src="/images/facebook.png" alt="Compartir en facebook"/> Facebook</a></p>
     <p class="twitter"><a href="http://twitter.com/home?status=<%= analysis_url(analysis) %>"><img src="/images/twitter.png" alt="Compartir en twitter"/> Twitter</a></p>
     <p class="delicious"><a href="http://del.icio.us/post?url=<%= analysis_url(analysis) %>"><img src="/images/delicious.png" alt="Guardar en del.icio.us"/> Del.icio.us</a></p>
