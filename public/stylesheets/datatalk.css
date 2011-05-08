@@ -412,6 +412,10 @@ img.avatar{
   margin:1em 0;
   line-height:140%;
 }
+#body_content h2 {
+  font-size:1.8em;
+  margin:20px 0 10px;
+}
 #body_content ul {
   font-size:1.3em;
   margin:1em 0 1em 2em;
