@@ -1,0 +1,14 @@
+<tr>
+  <td>
+    <%= link_to analisys.name, analisys_path(analisys) %> 
+  </td>
+  <td>
+    <%= analisys.visualizations.count %> 
+  </td>
+  <td>
+    <%= analyses.replies.without_visualizations.count %> 
+  </td>
+  <td>
+    <%= analyses.replies.with_visualizations.count %> 
+  </td>
+</tr>

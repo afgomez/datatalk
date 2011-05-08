@@ -8,6 +8,10 @@ class Analysis < ActiveRecord::Base
 
   has_friendly_id :title, :use_slug => true
 
+  # Scopes
+  named_scope :with_visualizations, :joins => "INNER JOIN visualizations ON (analyses.id = visualizations.analysis_id)"
+  named_scope :without_visualizations, :contions => "id NOT IN (SELECT analysis_id FROM visualizations)"
+
   # Validations
   validates_presence_of :title, :body, :user
   validates_presence_of :visualizations, :unless => :reply?

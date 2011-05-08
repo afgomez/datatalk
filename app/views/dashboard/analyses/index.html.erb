@@ -1,0 +1,17 @@
+<%= render :partial => "dashboard/shared/menu" %>
+
+<% if @analyses.any? %>
+  <table>
+    <tr>
+      <th>Análisis</th>
+      <th>Visualizaciones</th>
+      <th>Comentarios</th>
+      <th>Respuestas</th>
+    </tr>
+    <%= render :partial => 'dataset', :collection => @datasets %>
+  </table>
+<% else %>
+  <p>
+    No has realizado ningún análisis aún. <%= link_to "¿Porqué no lo intentas?", new_analysis_path %>
+  </p>
+<% end %>
