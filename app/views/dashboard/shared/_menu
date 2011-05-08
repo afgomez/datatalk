@@ -1,0 +1,4 @@
+<ul>
+<li><%= link_to "Tus datasets", dashboard_datasets_path %>
+<li><%= link_to "Tus análisis", dashboard_analyses_path %>
+</ul>

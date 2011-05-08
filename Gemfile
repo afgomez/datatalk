@@ -14,6 +14,7 @@ gem "kaminari"
 
 gem 'fastercsv'
 
+gem "kaminari"
 
 # gems for refinery
 gem 'refinerycms'

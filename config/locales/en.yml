@@ -1,4 +1,12 @@
 en:
+
+  hello: "Hello world"
+
+  time:
+    formats:
+      short: "%d/%m/%Y"
+
   plugins:
     datasets:
       title: Datasets
+

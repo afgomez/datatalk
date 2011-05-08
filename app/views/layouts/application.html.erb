@@ -8,36 +8,61 @@
 </head>
 <body<%= body_id %>>
 
+  <div class="lista_cabecera">
+    <div class="wrapper">
+    <ul>
+        <li><%= login_or_logout_path %> | </li>
+        <li><%= create_or_edit_user_registration_path %> |</li>
+  	<li><%= link_to 'Panel de control', dashboard_path %> |</li>
+    </ul>
+    </div>
+  </div>
+
+<div class="wrapper">
 
 
-<header class="c">
-	<p class="cabecera"><img class="img_cabecera" src="/images/logo_2011.png" alt="Imagen de cabecera" /></p>
-	<div class="header_tools">
-	<ul class="lista_cabecera">
-  		<li>Iniciar Sesión | </li>
-  		<li>Registro</li>  		
-  		<li>Panel de Control |</li>
-  		<li>Salir</li>
-	</ul>
-	<form class ="buscador" action="form_action.asp" method="get">
-	<input type="text" name="fname" />
-	</form>
-	</div>
+  <header class="c">
+    <h1 class="cabecera">Datatalk</h1>
+    <p class="tagline">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut</p>
+    <!-- <div class="header_tools">
+    <form class ="buscador" action="form_action.asp" method="get">
+    <input type="text" name="fname" />
+    </form>
+    </div> -->
 
-</header>
+  </header>
+
 	<nav class=="cabecera_navegacion">
-		<a href="hombe.html">Home</a>
+		<%= link_to 'Home', '/' %>
 		<a href="analisis.html">Análisis</a>
-		<a href="datasets.html">Datasets</a>
+		<%= link_to 'Datasets', datasets_path %>
 		<a href="about.html">¿Qué es esto?</a>
 		<a href="http://www.abredatos.es">www.abredatos.es</a>
 		<a href="http://www.twitter.com/abredatos">Twitter de Abredatos</a>
 	</nav>
-<%= yield %>
+  
+  <% [:notice, :alert].each do |k| %>
+    <% unless flash[k].blank? %>
+      <div class="flash <%= k %>"><%= flash[k] %></div>
+    <% end %>
+  <% end %>
+  
+  <div id="container">
+    <%= yield %>
+  </div>  
+
+</div><!-- wrapper -->
 
 <footer class="f">
-	<p>Datatalk - Abredatos</p>
-</footer>
+<div class="lista_pie">
+	<div class="wrapper">
+	  	<ul>
+	  		<li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a></li>
+	  		<li><a href="https://github.com/afgomez/datatalk">Datatalk en Github</a></li>
+	  	</ul>
+	  	</div>
+  	</div>
+  </footer>
 
 </body>
 </html>

@@ -1,0 +1,16 @@
+<%= render :partial => "dashboard/shared/menu" %>
+
+<% if @datasets.any? %>
+  <table>
+    <tr>
+      <th>Dataset</th>
+      <th>Análisis realizados</th>
+      <th>Visualizacioens realizadas</th>
+    </tr>
+    <%= render :partial => 'dataset', :collection => @datasets %>
+  </table>
+<% else %>
+  <p>
+    No has subido datasets aún. <%= link_to "¿Porqué no intentas subir uno?", new_dataset_path %>
+  </p>
+<% end %>

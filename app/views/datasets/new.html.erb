@@ -1,0 +1,12 @@
+<% form_for @dataset, :html => {:multipart => true} do |f| %>
+  <%= render "shared/form_errors", :object => @dataset %>
+  <%= f.label :data_file %>
+  <%= f.file_field :data_file %>
+  <%= f.label :name, 'Nombre' %>
+  <%= f.text_field :name %>
+  <%= f.label :origin, 'Fuente' %>
+  <%= f.text_field :origin %>
+  <%= f.label :description, 'Descripción' %>
+  <%= f.text_area :description %>
+  <%= f.submit %>
+<% end %>

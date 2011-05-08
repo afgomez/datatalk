@@ -1,17 +1,27 @@
-<div class="analysis">
+<article class="analysis clearfix">
+  <h1><%= link_to_unless_current 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt', analysis_path(1234) %></h1>
 
-  <div class="meta">
-  	<h1><%= link_to_unless_current 'Titulo', analysis_path(1234) %></h1>
+  <%= Visualization.first.chart unless Visualization.first.nil? %>
 
-  	<p class="meta">19/07/2012 - <img class="avatar" src="/images/avatar.png" alt="Avatar del usuario"/> <a href="#">David J. Brenes</a></p>
-
-  	<img src="/images/grafica.jpg" alt="gráfica de visualización"/>
+  <div class="content">
     
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
-
-	<div class="actions">
-	    <a href="#" class="btn">Añadir comentario</a>
-	</div>
     
-  </div>  
-</div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+  </div>
+  
+  <aside class="meta">
+    <img class="avatar" src="/images/avatar.png" alt="Avatar del usuario"/> 
+    <p class="author"><a href="#"><img src="/images/user.png" alt="Icono de usuario"/> David J. Brenes</a></p>
+    <p class="date"><img src="/images/date.png" alt="Icono de fecha"/> 19/07/2012 - 12:34</p>
+    <p class="facebook"><a href="http://www.facebook.com/share.php?u=URL_DEl_ANALISIS"><img src="/images/facebook.png" alt="Compartir en facebook"/> Facebook</a></p>
+    <p class="twitter"><a href="http://twitter.com/home?status=URL_DEL_ANALISIS"><img src="/images/twitter.png" alt="Compartir en twitter"/> Twitter</a></p>
+    <p class="delicious"><a href="http://del.icio.us/post?url=URL_DEL_ANALISIS"><img src="/images/delicious.png" alt="Guardar en del.icio.us"/> Del.icio.us</a></p>    
+    <div class="actions">
+      <a href="#"><img src="/images/comments_add.png" alt="Añadir comentario"/> Añadir comentario</a>
+    </div>
+  </aside><!-- meta -->
+  
+</article>
