@@ -9,4 +9,20 @@ module ApplicationHelper
     end
   end
 
+  def create_or_edit_user_registration_path
+    if user_signed_in?
+      return link_to('Editar registro', edit_member_path(current_user))
+    else
+      return link_to('Registrarse', new_member_path)
+    end
+  end
+
+  def login_or_logout_path
+    if user_signed_in?
+      return link_to('Salir', destroy_user_session_path)
+    else
+      return link_to('Login', new_user_session_path)
+    end
+  end
+
 end

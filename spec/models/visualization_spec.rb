@@ -7,14 +7,13 @@ describe Visualization do
     visualization = Visualization.create!(:legend => 'Bar foo', :body => 'Foo bar', :dataset => dataset)
     visualization.reload
     visualization.legend.should == 'Bar foo'
-    visualization.body.should == 'Foo bar'
+    visualization.body.should_not be_nil
     visualization.dataset.should == dataset
   end
 
-  it 'should not save if legend nor body set' do
-    Visualization.new(:body => 'Foo bar', :legend => 'Bar foo').save.should be_false
-    Visualization.new(:legend => 'Bar foo', :dataset => Dataset.make).save.should be_false
-    Visualization.new(:dataset => Dataset.make, :legend => 'Bar foo').save.should be_false
+  it 'should not save if dataset nor legend set' do
+    Visualization.new(:legend => 'Bar foo').save.should be_false
+    Visualization.new(:dataset => Dataset.make).save.should be_false
   end
 
 end

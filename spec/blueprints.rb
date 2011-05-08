@@ -14,6 +14,13 @@ User.blueprint do
   password
   name
   surname_1 { Sham.surname }
+  refinery = Role.find_by_title('Refinery')
+  # Si aun no hay un usuario con rol refinery, se le da al primero:
+  if refinery.nil?
+    roles { [Role.create!(:title => 'Refinery')] }
+  elsif refinery.users.empty?
+    roles { [refinery] }
+  end
 end
 
 Dataset.blueprint do

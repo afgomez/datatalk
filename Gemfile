@@ -10,6 +10,7 @@ gem 'mysql2', '~> 0.2.0'
 gem "jquery-rails"
 gem "devise"
 gem "carrierwave"
+gem "kaminari"
 
 gem 'fastercsv'
 
@@ -18,6 +19,7 @@ gem "kaminari"
 # gems for refinery
 gem 'refinerycms'
 gem 'refinerycms-memberships', '1.0', :path => 'vendor/engines'
+gem 'refinerycms-datasets', '1.0', :path => 'vendor/engines'
 
 group :test, :development do
   gem "rspec-rails", "~> 2.4"
@@ -48,3 +50,5 @@ end
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+gem 'refinerycms-analyses', '1.0', :path => 'vendor/engines'

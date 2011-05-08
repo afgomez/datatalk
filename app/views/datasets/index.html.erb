@@ -1,3 +1,9 @@
-<% 5.times do %>
-  <%= render :partial => 'dataset' %>
+<%= link_to 'Subir nuevo dataset', new_dataset_path() %>
+
+<% unless @datasets.blank? %>
+  <%= render @datasets %>
+
+  <%= paginate @datasets %>
+<% else %>
+  <p>Lo sentimos. Actualmente no hay datos disponibles. Tal vez quiera <a href="TODO">publicar uno nuevo</a>.</p>
 <% end %>

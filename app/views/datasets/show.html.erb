@@ -1,8 +1,17 @@
 <% body_id 'dataset' %>
 
+<%= render @dataset %>
 
 
-<%= render :partial => 'dataset' %>
+<% if @dataset.visualizations.present? %>
+  <h1 class="t">Visualizaciones</h1>
+  <% @dataset.visualizations.each do |v| %>
+    <div class="visualization">
+      <%= v.chart %>
+    </div>
+  <% end %>
+<% end %>
+
 
 <h1 class="t">Análisis del Dataset</h1>
 
@@ -13,6 +22,8 @@
 
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
   
+  <p><a href="#">Leer más</a></p>
+
 </article>
 <% end %>
 

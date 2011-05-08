@@ -10,7 +10,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110507150129) do
+ActiveRecord::Schema.define(:version => 20110508110458) do
+
+  create_table "analyses", :force => true do |t|
+    t.string   "title"
+    t.string   "excerpt"
+    t.text     "body"
+    t.integer  "analysis_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "datasets", :force => true do |t|
+    t.string   "name"
+    t.string   "origin"
+    t.text     "description"
+    t.string   "data_file",   :null => false
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "images", :force => true do |t|
     t.string   "image_mime_type"
@@ -80,6 +100,11 @@ ActiveRecord::Schema.define(:version => 20110507150129) do
   add_index "pages", ["lft"], :name => "index_pages_on_lft"
   add_index "pages", ["parent_id"], :name => "index_pages_on_parent_id"
   add_index "pages", ["rgt"], :name => "index_pages_on_rgt"
+
+  create_table "pages_roles", :id => false, :force => true do |t|
+    t.integer "page_id"
+    t.integer "role_id"
+  end
 
   create_table "refinery_settings", :force => true do |t|
     t.string   "name"
@@ -172,9 +197,22 @@ ActiveRecord::Schema.define(:version => 20110507150129) do
     t.string   "name"
     t.string   "surname_1"
     t.string   "surname_2"
-    t.string   "nick"
+    t.datetime "member_until"
+    t.string   "membership_level"
   end
 
   add_index "users", ["id"], :name => "index_users_on_id"
+
+  create_table "visualizations", :force => true do |t|
+    t.string   "legend"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "dataset_id"
+    t.integer  "analysis_id"
+    t.boolean  "transpose",   :default => false
+    t.integer  "width",       :default => 600
+    t.integer  "height",      :default => 300
+  end
 
 end

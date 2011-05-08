@@ -10,4 +10,9 @@ class Dataset < ActiveRecord::Base
   # File uploader
   mount_uploader :data_file, DataSetUploader
   
+  def csv
+    @csv ||= FasterCSV.read(self.data_file.file.file)
+  end
+  
+  
 end
