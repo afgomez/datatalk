@@ -7,6 +7,9 @@ class MembersController < ApplicationController
   # Protect these actions behind member login - do we need to check out not signing up when signed in?
   before_filter :redirect?, :except => [:new, :create]
 
+  # Protect these actions behind member login - do we need to check out not signing up when signed in?
+  before_filter :already_user, :only => [:new, :create]
+
   # GET /member/:id
   def show
     @page = Page.find_by_link_url('/member_show')
@@ -50,11 +53,12 @@ class MembersController < ApplicationController
     params[:member][:username] = params[:member][:email]
 
     if @member.update_attributes(params[:member])
-      flash[:notice] = t('successful', :scope => 'members.update', :email => @member.email)
+      flash[:notice] = "Has actualizado tu perfil correctamente"
       MembershipMailer.profile_update_notification_admin(@member).deliver unless is_admin?
       redirect_to(is_admin? ? admin_memberships_path : root_path )
 
     else
+      flash[:alert] = "Ha habido algún problema actualizando el perfil"
       @is_admin = is_admin?
       @page = Page.find_by_link_url('/member_edit')
       render :action => 'edit'
@@ -68,10 +72,12 @@ class MembersController < ApplicationController
     @member.membership_level = 'Member'
 
     if @member.save
+      flash[:notice] = "Te has dado correctamente"
       MembershipMailer.application_confirmation_member(@member).deliver
       MembershipMailer.application_confirmation_admin(@member).deliver
       sign_in(:user, @member);
     else
+      flash[:alert] = "No se ha podido crear tu cuenta"
       @page = Page.find_by_link_url('/members/new')
       @member.errors.delete(:username) # this is set to email
       render :action => :new
@@ -173,5 +179,19 @@ protected
 
   def is_admin?
     !(current_user.role_ids & [REFINERY_ROLE_ID, SUPERUSER_ROLE_ID]).empty?
+  end
+
+  def redirect?
+    if current_user.nil?
+      flash[:alert] = "Solo los miembros registrados pueden editar sus perfiles."
+      redirect_to new_user_session_path
+    end
+  end
+
+  def already_user
+    if current_user.nil?
+      flash[:alert] = "Ya estás registrado en la web."
+      redirect_to dashboard_path
+    end
   end
 end

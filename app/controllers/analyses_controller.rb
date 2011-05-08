@@ -23,9 +23,10 @@ class AnalysesController < ApplicationController
     @visualization = Visualization.new params[:visualization]
     @analysis.visualization = @visualization
     if @analysis.save
-      flash[:notice] = "Has creado la respuesta correctamente"
+      flash[:notice] = "Has creado el análisis correctamente"
       redirect_to analysis_path(:id => @analysis)
     else
+      flash[:alert] = "No se ha podido crear el análisis"
       render :action => :new
     end
   end
@@ -41,6 +42,7 @@ class AnalysesController < ApplicationController
       flash[:notice] = "El análisis se ha actualizado."
       render :show
     else
+      flash[:alert] = "No se ha podido actualizar el análisis"
       render :edit
     end
   end
