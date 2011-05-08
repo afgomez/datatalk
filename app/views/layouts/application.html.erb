@@ -24,18 +24,18 @@
   <header class="c">
     <h1 class="cabecera">Datatalk</h1>
     <p class="tagline">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut</p>
-    <!-- <div class="header_tools">
-    <form class ="buscador" action="form_action.asp" method="get">
-    <input type="text" name="fname" />
-    </form>
-    </div> -->
+    
+    <div class="buttons">
+      <%= link_to 'Nuevo set de datos', new_dataset_path %>
+      <%= link_to 'Nuevo análisis', new_analysis_path %>
+    </div>
 
   </header>
 
 	<nav class="cabecera_navegacion">
 		<%= link_to 'Home', '/' %>
 		<%= link_to 'Datasets', datasets_path %>
-		<a href="about.html">¿Qué es esto?</a>
+		<a href="/qu%C3%A9-es-esto">¿Qué es esto?</a>
 		<a href="http://www.abredatos.es">www.abredatos.es</a>
 		<a href="http://www.twitter.com/abredatos">Twitter de Abredatos</a>
 	</nav>
