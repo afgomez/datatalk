@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110508110458) do
+ActiveRecord::Schema.define(:version => 20110508211649) do
 
   create_table "analyses", :force => true do |t|
     t.string   "title"
@@ -194,6 +194,9 @@ ActiveRecord::Schema.define(:version => 20110508110458) do
     t.string   "remember_token"
     t.string   "reset_password_token"
     t.datetime "remember_created_at"
+    t.string   "name"
+    t.string   "surname_1"
+    t.string   "surname_2"
     t.datetime "member_until"
     t.string   "membership_level"
   end
@@ -208,7 +211,7 @@ ActiveRecord::Schema.define(:version => 20110508110458) do
     t.integer  "dataset_id"
     t.integer  "analysis_id"
     t.boolean  "transpose",   :default => false
-    t.integer  "width",       :default => 600
+    t.integer  "width",       :default => 917
     t.integer  "height",      :default => 300
   end
 
