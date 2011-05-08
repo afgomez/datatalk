@@ -11,11 +11,6 @@
       <%= f.select :dataset_id, options_for_select(Dataset.all.map{|d| [d.name,d.id]}) -%>
     </div>
 
-    <div class='field'>
-      <%= f.label :transpose -%>
-      <%= f.check_box :transpose -%>
-    </div>
-
   <% end -%>
 
 </div>
