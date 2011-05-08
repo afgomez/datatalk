@@ -65,6 +65,8 @@ GEM
     jquery-rails (1.0)
       rails (~> 3.0)
       thor (~> 0.14)
+    kaminari (0.12.4)
+      rails (>= 3.0.0)
     linecache (0.43)
     machinist (1.0.6)
     mail (2.2.19)
@@ -182,6 +184,7 @@ DEPENDENCIES
   faker
   fastercsv
   jquery-rails
+  kaminari
   machinist
   mysql2 (~> 0.2.0)
   rails (= 3.0.7)
