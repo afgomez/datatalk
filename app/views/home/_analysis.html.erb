@@ -1,17 +1,25 @@
-<div class="analysis">
+<article class="analysis clearfix">
+  <h1><%= link_to_unless_current 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt', analysis_path(1234) %></h1>
 
-  <div class="meta">
-  	<h1><%= link_to_unless_current 'Titulo', analysis_path(1234) %></h1>
+  <%= Visualization.first.chart %>
 
-  	<p class="meta">19/07/2012 - <img class="avatar" src="/images/avatar.png" alt="Avatar del usuario"/> <a href="#">David J. Brenes</a></p>
-
-  	<img src="/images/grafica.jpg" alt="gráfica de visualización"/>
+  <div class="content">
     
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
-
-	<div class="actions">
-	    <a href="#" class="btn">Añadir comentario</a>
-	</div>
     
-  </div>  
-</div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+  </div>
+  
+  <aside class="meta">
+    <img class="avatar" src="/images/avatar.png" alt="Avatar del usuario"/> 
+    <p class="author"><a href="#">David J. Brenes</a></p>
+    <p class="date">19/07/2012 - 12:34</p>
+    
+    <div class="actions">
+      <a href="#" class="btn">Añadir comentario</a>
+    </div>
+  </aside><!-- meta -->
+  
+</article>
