@@ -54,7 +54,7 @@ class Highchart
       series:[
     JS
     
-    js += (data.map { |row| r = row.clone; "{ name: '#{r.shift}', data: [#{r.join(',')}] }" }.join(','))
+    js += (data.map { |row| r = row.clone; "{ name: '#{r.shift}', data: [#{r.map(&:to_f).join(',')}] }" }.join(','))
 
     js += <<-JS
       ]

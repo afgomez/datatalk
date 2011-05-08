@@ -20,11 +20,9 @@ class Visualization < ActiveRecord::Base
     
     chart_code = nil
     
-    
-    
     opts = {
       :title    => legend,
-      :renderTo => "chart-#{id}"
+      :renderTo => "chart-#{(0...16).map{65.+(rand(25)).chr}.join}"
     }
     
     hc = Highchart.new(opts, csv)
