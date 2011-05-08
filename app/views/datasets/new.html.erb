@@ -1,12 +1,27 @@
 <% form_for @dataset, :html => {:multipart => true} do |f| %>
   <%= render "shared/form_errors", :object => @dataset %>
-  <%= f.label :data_file %>
-  <%= f.file_field :data_file %>
-  <%= f.label :name, 'Nombre' %>
-  <%= f.text_field :name %>
-  <%= f.label :origin, 'Fuente' %>
-  <%= f.text_field :origin %>
-  <%= f.label :description, 'Descripción' %>
-  <%= f.text_area :description %>
-  <%= f.submit %>
+  
+  <div class="field">
+    <%= f.label :data_file %>
+    <%= f.file_field :data_file, :class => 'larger' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name, 'Nombre' %>
+    <%= f.text_field :name, :class => 'larger' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :origin, 'Fuente' %>
+    <%= f.text_field :origin, :class => 'larger' %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :description, 'Descripción' %>
+    <%= f.text_area :description, :class => 'larger' %>
+  </div>
+  
+  <div class="form-actions">
+    <%= f.submit %>
+  </div>
 <% end %>
