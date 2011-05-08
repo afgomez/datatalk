@@ -189,7 +189,7 @@ protected
   end
 
   def already_user
-    if current_user.nil?
+    unless current_user.nil?
       flash[:alert] = "Ya estás registrado en la web."
       redirect_to dashboard_path
     end
