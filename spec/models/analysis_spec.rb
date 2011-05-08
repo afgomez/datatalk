@@ -29,7 +29,6 @@ describe Analysis do
     analysis.reload
     reply.reload
     analysis.replies.first.should == reply
-    debugger
     analysis.reply?.should be_false
     reply.reply?.should be_true
   end
