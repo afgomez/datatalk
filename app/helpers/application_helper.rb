@@ -1,5 +1,17 @@
-module ApplicationHelper
+require 'digest/md5'
 
+module ApplicationHelper
+  
+  # outputs the gravatar <img> for the specified user
+  def gravatar_for user
+    
+    hash = Digest::MD5.hexdigest(user.email.downcase)
+    src  = "http://www.gravatar.com/avatar/#{hash}?s=36&d=mm"
+    
+    image_tag src, :class => 'avatar'
+  end
+  
+  
   # Sets the body id in views and puts it in the layout
   def body_id(id = nil)
     if id.present?
@@ -24,5 +36,8 @@ module ApplicationHelper
       return link_to('Login', new_user_session_path)
     end
   end
-
+  
+  
+  
+  
 end

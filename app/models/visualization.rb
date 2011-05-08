@@ -19,7 +19,9 @@ class Visualization < ActiveRecord::Base
     return body.html_safe if body? && !reload_cache
     
     chart_code = nil
-
+    
+    
+    
     opts = {
       :title    => legend,
       :renderTo => "chart-#{id}"

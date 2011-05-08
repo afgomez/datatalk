@@ -1,2 +1,3 @@
-<%= render :partial => 'analysis', :collection => @analyses %>
+<%= link_to 'Crear nuevo análisis', new_analysis_path %>
+<%= render @analyses %>
 <%= paginate @analyses %>

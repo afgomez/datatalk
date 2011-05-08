@@ -11,9 +11,9 @@
   <div class="lista_cabecera">
     <div class="wrapper">
     <ul>
-        <li><%= login_or_logout_path %> | </li>
-        <li><%= create_or_edit_user_registration_path %> |</li>
-  	<li><%= link_to 'Panel de control', dashboard_path %> |</li>
+      <li><%= login_or_logout_path %></li>
+      <li><%= create_or_edit_user_registration_path %></li>
+      <li><%= link_to 'Panel de control', dashboard_path %></li>
     </ul>
     </div>
   </div>
@@ -32,9 +32,8 @@
 
   </header>
 
-	<nav class=="cabecera_navegacion">
+	<nav class="cabecera_navegacion">
 		<%= link_to 'Home', '/' %>
-		<a href="analisis.html">Análisis</a>
 		<%= link_to 'Datasets', datasets_path %>
 		<a href="about.html">¿Qué es esto?</a>
 		<a href="http://www.abredatos.es">www.abredatos.es</a>

@@ -1,5 +1,7 @@
 class Analysis < ActiveRecord::Base
 
+  paginates_per 10
+  
   # Database relations:
   belongs_to :parent, :class_name => 'Analysis', :foreign_key => 'analysis_id'
   belongs_to :user

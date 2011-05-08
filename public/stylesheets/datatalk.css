@@ -115,7 +115,7 @@ body {
   font-size:1.4em;
   text-transform:uppercase;
   color:#678;
-  margin:15px;
+  margin:15px 0;
 }
 
 .c {
@@ -129,7 +129,7 @@ body {
   float:right;
 }
 
-nav {
+nav.cabecera_navegacion {
   font:1.3em/32px Arial, Helvetica, sans-serif;
   background:#212121;
   color:#fff;
@@ -137,13 +137,13 @@ nav {
   padding-left:12px;
 
 }
-nav a {
+nav.cabecera_navegacion a {
   color:#fff;
   float:left;
   padding:0 15px;
   background:url(../images/nav-separator.png) no-repeat 0 center;
 }
-nav a:first-child {
+nav.cabecera_navegacion a:first-child {
   background:none;
 }
 img.img_cabecera{
@@ -234,9 +234,9 @@ img.avatar{
 /* Datasets
 --------------------------------------------------------------------- */
 .dataset {
-  background:#ddd;
-  padding:15px;
-  margin:15px 0;
+  margin:30px 0 40px;
+  border-bottom:1px dashed #ccc;
+  padding-bottom:30px;
 }
 
 .dataset h1 {
@@ -251,8 +251,10 @@ img.avatar{
 }
 
 #dataset .dataset {
-  margin-bottom:30px;
-  background:none;
+  margin:30px 0;
+  border:0;
+  padding:0;
+  
 }
 #dataset .dataset h1 {
   font-size:2.4em;
@@ -271,6 +273,9 @@ img.avatar{
   font-size:2.4em;
   margin-bottom:15px;
 }
+.analysis h2 {
+  font-size:1.8em;
+}
 .analysis .content {
   float:left;
   width:662px;
@@ -282,7 +287,19 @@ img.avatar{
   background:#eee;
   position:relative;
   
+  -ms-filter:"alpha(opacity=30)";
+  filter:alpha(opacity=30);
+  opacity: 0.3;
+  -webkit-transition: opacity 0.4s;
+  -moz-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
 }
+
+.analysis:hover aside {
+  opacity:1;
+}
+
+
 .analysis aside p {
   margin:0 0 7px;
   padding-bottom:7px;
@@ -291,7 +308,7 @@ img.avatar{
   line-height:normal;
   color:#999;
 }
-.analysis aside img{
+.analysis aside img {
   vertical-align:middle;  
 }
 .analysis aside a{
@@ -329,4 +346,24 @@ img.avatar{
   line-height:140%;
   margin:1ex 0;
 }
+
+
+/* Pagination
+--------------------------------------------------------------------- */
+.pagination {
+  text-align:center;
+  font-size:1.2em;
+  margin:20px 0 40px;
+}
+.pagination a {
+  display:inline-block;
+  padding:3px 7px;
+  border:1px solid #079;
+}
+.pagination .current {
+  padding:3px 7px;
+  font-weight:bold;
+}
+
+
 
